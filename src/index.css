@@ -18,3 +18,12 @@ body {
   background: radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.15), transparent 35%),
     radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.12), transparent 35%), #020617;
 }
+
+.noise-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.3) 0.5px, transparent 0.5px);
+  background-size: 2px 2px;
+}

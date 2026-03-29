@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   BookOpenCheck,
+  BrainCircuit,
   Building2,
   Gamepad2,
   GraduationCap,
+  Orbit,
   Sparkles,
   Workflow,
 } from "lucide-react";
@@ -33,12 +35,24 @@ const features = [
 ];
 
 const steps = [
-  "Choose learning path",
-  "AI adapts content",
-  "Progress through gamification",
+  {
+    title: "Choose learning path",
+    description: "Pick curriculum islands by subject, level, and classroom goals.",
+    icon: Orbit,
+  },
+  {
+    title: "AI adapts content",
+    description: "The engine continuously personalizes lessons, pacing, and challenge.",
+    icon: BrainCircuit,
+  },
+  {
+    title: "Progress through gamification",
+    description: "Learners unlock XP, levels, and quests while building mastery.",
+    icon: Gamepad2,
+  },
 ];
 
-const logos = ["Nova School", "EduCore", "FutureClass", "LearnGrid", "AcadeMix", "MindSpark"];
+const logos = ["School Logo", "District Partner", "Learning Network", "Academy Group", "Campus Hub", "EdTech Partner"];
 
 const cardAnimation = {
   hidden: { opacity: 0, y: 24 },
@@ -52,6 +66,7 @@ const cardAnimation = {
 function App() {
   return (
     <main className="relative overflow-hidden text-slate-100">
+      <div className="noise-overlay" />
       <div className="pointer-events-none absolute inset-0 bg-grid bg-[size:56px_56px] opacity-25" />
       <div className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-cyan-400/20 blur-[110px]" />
       <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-violet-400/20 blur-[120px]" />
@@ -74,11 +89,11 @@ function App() {
             AI-powered learning platform for students, teachers and schools
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300">
+            <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300">
               Get Started
               <ArrowRight size={16} />
             </button>
-            <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-600 bg-slate-900/50 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-400">
+            <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-600 bg-slate-900/50 px-6 py-3 text-sm font-semibold text-slate-100 transition duration-300 hover:-translate-y-0.5 hover:border-slate-400">
               Explore Platform
               <BookOpenCheck size={16} />
             </button>
@@ -130,13 +145,19 @@ function App() {
         <h3 className="text-2xl font-semibold text-white sm:text-3xl">How it works</h3>
         <div className="mt-7 grid gap-4 md:grid-cols-3">
           {steps.map((step, index) => (
-            <div
-              key={step}
-              className="rounded-xl border border-slate-700/50 bg-slate-900/40 p-6 text-slate-200 backdrop-blur-md"
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="rounded-xl border border-slate-700/50 bg-slate-900/40 p-6 text-slate-200 backdrop-blur-md transition duration-300 hover:border-cyan-300/40"
             >
               <p className="text-xs tracking-widest text-cyan-300">STEP {index + 1}</p>
-              <p className="mt-3 text-lg font-medium">{step}</p>
-            </div>
+              <step.icon size={18} className="mt-3 text-cyan-200" />
+              <p className="mt-3 text-lg font-medium">{step.title}</p>
+              <p className="mt-2 text-sm text-slate-300">{step.description}</p>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -147,7 +168,7 @@ function App() {
           {logos.map((name) => (
             <div
               key={name}
-              className="rounded-xl border border-slate-700/50 bg-slate-900/30 px-4 py-5 text-center text-sm text-slate-300"
+              className="rounded-xl border border-slate-700/50 bg-slate-900/30 px-4 py-5 text-center text-sm text-slate-300 transition duration-300 hover:border-slate-500 hover:text-slate-200"
             >
               {name}
             </div>
@@ -158,7 +179,7 @@ function App() {
       <section className="relative mx-auto max-w-6xl px-6 pb-24 pt-14">
         <div className="rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-500/20 via-slate-900 to-violet-500/20 p-10 text-center shadow-glow backdrop-blur-md sm:p-14">
           <h3 className="text-3xl font-semibold text-white sm:text-4xl">Start building the future of education</h3>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">
+          <button className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3 text-sm font-semibold text-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100">
             Join Dao-Yu-101
             <ArrowRight size={16} />
           </button>
