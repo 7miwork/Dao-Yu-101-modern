@@ -18,12 +18,3 @@ body {
   min-width: 320px;
   background: linear-gradient(180deg, #f7f9fc 0%, #eef2ff 45%, #f7f9fc 100%);
 }
-
-.noise-overlay {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  opacity: 0.025;
-  background-image: radial-gradient(rgba(30, 41, 59, 0.16) 0.5px, transparent 0.5px);
-  background-size: 2px 2px;
-}

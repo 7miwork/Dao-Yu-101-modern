@@ -1,49 +1,47 @@
-import { motion } from "framer-motion";
-import { BrainCircuit, ChartLine, Gamepad2, HeartHandshake } from "lucide-react";
+import { BookOpenCheck, Building2, ChartLine, HeartHandshake, Route } from "lucide-react";
 import Card from "../ui/Card";
 
 const features = [
   {
-    title: "Adaptive Learning",
-    description: "AI adjusts pace, challenge, and sequence to fit each learner profile.",
-    icon: BrainCircuit,
+    title: "Adaptive Learning System",
+    description: "Learning paths adapt to each student's pace and progression over time.",
+    icon: BookOpenCheck,
   },
   {
     title: "Teacher Dashboard",
-    description: "Future-ready controls for class planning, insights, and intervention.",
+    description: "Future-ready class oversight with planning, assignments, and progress visibility.",
     icon: ChartLine,
   },
   {
     title: "Parent Tracking",
-    description: "Role-ready visibility into learning progress, habits, and milestones.",
+    description: "Parents can follow milestones, routines, and outcomes in a simple view.",
     icon: HeartHandshake,
   },
   {
-    title: "Gamified Learning",
-    description: "Student engagement loops with quests, levels, and meaningful rewards.",
-    icon: Gamepad2,
+    title: "School Management System",
+    description: "Institution-level structure for classes, roles, and school-wide learning operations.",
+    icon: Building2,
+  },
+  {
+    title: "Student Learning Path",
+    description: "Clear next steps keep students focused and reduce onboarding friction.",
+    icon: Route,
   },
 ];
 
 function FeaturesSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12">
-      <h3 className="text-2xl font-semibold text-[#1E293B] sm:text-3xl">Core education capabilities</h3>
-      <div className="mt-8 grid gap-5 sm:grid-cols-2">
-        {features.map((feature, index) => (
-          <motion.div
-            key={feature.title}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35, delay: index * 0.06 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <Card className="h-full p-6">
+    <section className="mx-auto max-w-6xl px-6 py-16">
+      <h3 className="text-3xl font-semibold text-[#1E293B] sm:text-4xl">Core platform capabilities</h3>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature) => (
+          <div key={feature.title}>
+            <Card className="h-full p-7">
               <feature.icon className="text-[#5B6CFF]" />
               <h4 className="mt-4 text-lg font-semibold text-[#1E293B]">{feature.title}</h4>
               <p className="mt-2 text-sm leading-relaxed text-[#475569]">{feature.description}</p>
             </Card>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
