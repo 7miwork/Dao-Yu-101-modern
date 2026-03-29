@@ -6,6 +6,7 @@
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #1e293b;
   background: #f7f9fc;
+  line-height: 1.6;
 }
 
 * {
@@ -15,15 +16,14 @@
 body {
   margin: 0;
   min-width: 320px;
-  background: radial-gradient(circle at 20% 0%, rgba(79, 124, 255, 0.13), transparent 35%),
-    radial-gradient(circle at 90% 10%, rgba(46, 211, 183, 0.1), transparent 35%), #f7f9fc;
+  background: linear-gradient(180deg, #f7f9fc 0%, #eef2ff 45%, #f7f9fc 100%);
 }
 
 .noise-overlay {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  opacity: 0.05;
-  background-image: radial-gradient(rgba(30, 41, 59, 0.2) 0.5px, transparent 0.5px);
+  opacity: 0.025;
+  background-image: radial-gradient(rgba(30, 41, 59, 0.16) 0.5px, transparent 0.5px);
   background-size: 2px 2px;
 }

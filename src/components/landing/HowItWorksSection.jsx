@@ -34,10 +34,10 @@ function HowItWorksSection() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <Card className="h-full p-6">
-              <p className="text-xs tracking-widest text-[#4F7CFF]">STEP {index + 1}</p>
+              <p className="text-xs font-medium text-[#4F7CFF]">Step {index + 1}</p>
               <step.icon size={18} className="mt-3 text-[#6C63FF]" />
               <p className="mt-3 text-lg font-medium text-[#1E293B]">{step.title}</p>
-              <p className="mt-2 text-sm text-[#475569]">{step.description}</p>
+              <p className="mt-2 text-sm leading-relaxed text-[#475569]">{step.description}</p>
             </Card>
           </motion.div>
         ))}

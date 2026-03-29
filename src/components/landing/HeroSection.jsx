@@ -9,17 +9,17 @@ function HeroSection() {
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
-        className="rounded-[24px] border border-[#dbe5ff] bg-gradient-to-br from-white via-[#f7f9ff] to-[#edf8f5] p-8 shadow-[0_20px_50px_rgba(79,124,255,0.12)] sm:p-12"
+        className="rounded-[24px] border border-[#dbe5ff] bg-gradient-to-br from-white via-[#f7f9ff] to-[#eef2ff] p-8 shadow-[0_14px_36px_rgba(30,41,59,0.08)] sm:p-12"
       >
         <div className="inline-flex items-center gap-2 rounded-full border border-[#cdd9ff] bg-[#eef3ff] px-4 py-2 text-xs font-medium text-[#4F7CFF]">
           <GraduationCap size={14} />
           AI Learning OS
         </div>
 
-        <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-[#1E293B] sm:text-6xl">
+        <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.15] text-[#1E293B] sm:text-6xl">
           Dao-Yu-101
         </h1>
-        <p className="mt-5 max-w-2xl text-base text-[#475569] sm:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#475569] sm:text-lg">
           AI-powered learning platform for students, teachers, schools, and parents.
         </p>
 

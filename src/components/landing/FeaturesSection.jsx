@@ -39,7 +39,7 @@ function FeaturesSection() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <Card className="h-full p-6">
-              <feature.icon className="text-[#4F7CFF]" />
+              <feature.icon className="text-[#5B6CFF]" />
               <h4 className="mt-4 text-lg font-semibold text-[#1E293B]">{feature.title}</h4>
               <p className="mt-2 text-sm leading-relaxed text-[#475569]">{feature.description}</p>
             </Card>
