@@ -11,22 +11,22 @@ const navItems = [
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-[#dbe5ff] bg-[#F7F9FC]/90 backdrop-blur-xl">
       <AppContainer className="flex items-center justify-between py-4">
-        <Link to={APP_ROUTES.landing} className="inline-flex items-center gap-2 text-sm font-semibold text-slate-100">
-          <span className="rounded-lg border border-cyan-300/30 bg-cyan-300/10 p-2 text-cyan-200">
+        <Link to={APP_ROUTES.landing} className="inline-flex items-center gap-2 text-sm font-semibold text-[#1E293B]">
+          <span className="rounded-lg border border-[#cdd9ff] bg-[#eef3ff] p-2 text-[#4F7CFF]">
             <GraduationCap size={16} />
           </span>
           Dao-Yu-101
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+        <nav className="hidden items-center gap-6 text-sm text-[#64748B] md:flex">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                isActive ? "text-cyan-300" : "transition hover:text-slate-100"
+                isActive ? "text-[#4F7CFF]" : "transition hover:text-[#1E293B]"
               }
             >
               {item.label}

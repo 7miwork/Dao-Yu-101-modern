@@ -1,10 +1,10 @@
 const variantStyles = {
   primary:
-    "bg-cyan-400 text-slate-950 hover:-translate-y-0.5 hover:bg-cyan-300 focus-visible:ring-cyan-300",
+    "bg-[#4F7CFF] text-white shadow-sm hover:-translate-y-0.5 hover:bg-[#426be6] focus-visible:ring-[#4F7CFF]",
   secondary:
-    "border border-slate-600 bg-slate-900/50 text-slate-100 hover:-translate-y-0.5 hover:border-slate-400 focus-visible:ring-slate-400",
+    "border border-[#cdd9ff] bg-white text-[#1E293B] shadow-sm hover:-translate-y-0.5 hover:border-[#4F7CFF] hover:text-[#4F7CFF] focus-visible:ring-[#4F7CFF]",
   ghost:
-    "text-slate-200 hover:bg-slate-800/60 focus-visible:ring-slate-500",
+    "text-[#1E293B] hover:bg-[#eef3ff] focus-visible:ring-[#6C63FF]",
 };
 
 function Button({ children, className = "", variant = "primary", type = "button", ...props }) {

@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "../layouts/AppLayout";
-import DashboardPlaceholder from "../pages/DashboardPlaceholder";
-import LandingPage from "../pages/LandingPage";
+import DashboardPlaceholder from "../pages/app/DashboardPlaceholder";
+import LandingPage from "../pages/public/LandingPage";
 import { APP_ROUTES } from "../lib/routes";
 
 function App() {
