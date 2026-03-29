@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import AppContainer from "../app/AppContainer";
 import Navbar from "../components/navigation/Navbar";
 
 function AppLayout() {
@@ -13,7 +14,7 @@ function AppLayout() {
         <Navbar />
         <Outlet />
         <footer className="border-t border-slate-800/80 py-8 text-center text-xs text-slate-400">
-          Dao-Yu-101 - AI Education Operating System
+          <AppContainer>Dao-Yu-101 - AI Education Operating System</AppContainer>
         </footer>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { GraduationCap } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
+import AppContainer from "../../app/AppContainer";
 import { APP_ROUTES } from "../../lib/routes";
 import Button from "../ui/Button";
 
@@ -11,7 +12,7 @@ const navItems = [
 function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/70 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+      <AppContainer className="flex items-center justify-between py-4">
         <Link to={APP_ROUTES.landing} className="inline-flex items-center gap-2 text-sm font-semibold text-slate-100">
           <span className="rounded-lg border border-cyan-300/30 bg-cyan-300/10 p-2 text-cyan-200">
             <GraduationCap size={16} />
@@ -39,7 +40,7 @@ function Navbar() {
           </Button>
           <Button className="px-4 py-2">Get Started</Button>
         </div>
-      </div>
+      </AppContainer>
     </header>
   );
 }
