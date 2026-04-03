@@ -1,7 +1,8 @@
 import { GraduationCap } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import AppContainer from "../../app/AppContainer";
 import { APP_ROUTES } from "../../lib/routes";
+import { handlePostLoginRedirect, login } from "../../features/auth";
 import Button from "../ui/Button";
 
 const navItems = [
@@ -10,6 +11,22 @@ const navItems = [
 ];
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const handleLoginClick = async () => {
+    console.log("LOGIN CLICKED");
+    const user = await login({ 
+      email: "user@test.com"
+    });
+    console.log("HANDLE LOGIN CALLED", user);
+    handlePostLoginRedirect(user, navigate);
+  };
+
+  const handleGetStartedClick = () => {
+    console.log("GET STARTED CLICKED");
+    navigate(APP_ROUTES.getStarted);
+  };
+
   return (
     <header className="sticky top-0 z-40 border-b border-[#dbe5ff] bg-[#F7F9FC]/90 backdrop-blur-xl">
       <AppContainer className="flex items-center justify-between py-4">
@@ -35,10 +52,10 @@ function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost" className="px-4 py-2">
+          <Button variant="ghost" className="px-4 py-2" onClick={handleLoginClick}>
             Login
           </Button>
-          <Button className="px-4 py-2">Get Started</Button>
+          <Button className="px-4 py-2" onClick={handleGetStartedClick}>Get Started</Button>
         </div>
       </AppContainer>
     </header>
