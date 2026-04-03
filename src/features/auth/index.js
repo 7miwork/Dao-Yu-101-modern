@@ -1,4 +1,6 @@
 export const authFeature = {
   name: "auth",
-  status: "planned",
+  status: "active",
 };
+
+export * from './authHandler';
