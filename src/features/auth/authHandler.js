@@ -6,17 +6,25 @@
 export const V2_PLATFORM_URL = "https://7miwork.github.io/Dao-Yu-101-V2/";
 
 /**
- * Handles post login redirect logic - first shows role selection screen
- * @param {Object} user - Authenticated user object
+ * Handles post login redirect logic with role based routing
+ * @param {Object} user - Authenticated user object with role property
  * @param {Function} navigate - React Router navigate function for internal routes
  */
 export const handlePostLoginRedirect = (user, navigate) => {
   if (!user) return;
   
-  console.log("LOGIN SUCCESSFUL, navigating to role selection screen");
-  
-  // Always go to role selection screen first after login
-  // User will select their role/dashboard manually
+  console.log("LOGIN SUCCESS USER:", user);
+  console.log("ROLE:", user.role);
+
+  // ✅ ONLY STUDENT gets DIRECT EXTERNAL REDIRECT
+  if (user.role === "student") {
+    console.log("STUDENT ROLE DETECTED → REDIRECT TO V2 PLATFORM");
+    window.location.href = V2_PLATFORM_URL;
+    return;
+  }
+
+  // ✅ ALL OTHER ROLES go to internal role selection screen
+  console.log("NON-STUDENT ROLE → show dashboard selection");
   if (navigate) {
     navigate("/dashboard");
   }
