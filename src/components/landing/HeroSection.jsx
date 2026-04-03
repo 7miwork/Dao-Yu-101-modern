@@ -1,22 +1,23 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import { handlePostLoginRedirect, login } from "../../features/auth";
 
 function HeroSection() {
+  const navigate = useNavigate();
 
   const handleLoginClick = async () => {
     console.log("LOGIN BUTTON CLICKED");
     
-    // Mock login with student role for testing
+    // Mock login - no role assigned yet!
     const user = await login({ 
-      email: "student@test.com", 
-      role: "student" 
+      email: "user@test.com"
     });
     
     console.log("HANDLE LOGIN CALLED", user);
     
-    // Pass null for navigate since we are testing student redirect
-    handlePostLoginRedirect(user, null);
+    // Go to role selection screen, NOT direct redirect
+    handlePostLoginRedirect(user, navigate);
   };
 
   return (
